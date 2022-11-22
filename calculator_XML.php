@@ -44,7 +44,7 @@ if(isset($_GET['num1']) && isset($_GET['num2']) && isset($_GET['operation']))
     else if($operation == "divide")
     {
         if($num2 == 0)
-        {      
+        {
         //Adding details to the web services course
             $errorCode = $dom->createElement('errorCode', 'Error code 3, ');
             $errorDescription = $dom->createElement('errorDescription', 'Description - Division by 0 not accepted');
@@ -57,22 +57,22 @@ if(isset($_GET['num1']) && isset($_GET['num2']) && isset($_GET['operation']))
             $result = $num1 / $num2;
         }
     }
-    else if ($operation == "power") 
+    else if ($operation == "power")
     {
         $result = pow($num1, $num2);
     }
-    else if ($operation == "factorial") 
+    else if ($operation == "factorial")
     {
         $numf1 = $num1;
         $numf2 = $num2;
 
-        for ($nf = $numf1 - 1; $nf > 0; $nf--)   
-            {  
-                $numf1 = $numf1 * $nf;  
-            } 
-        for ($nf = $numf2 - 1; $nf > 0; $nf--)   
-            {  
-                $numf2 = $numf2 * $nf;  
+        for ($nf = $numf1 - 1; $nf > 0; $nf--)
+            {
+                $numf1 = $numf1 * $nf;
+            }
+        for ($nf = $numf2 - 1; $nf > 0; $nf--)
+            {
+                $numf2 = $numf2 * $nf;
             }
 
         $result = $numf1;
@@ -146,4 +146,3 @@ else
     $info->appendChild($parametersRequired);
 }
 echo $dom->saveXML();
-?>
